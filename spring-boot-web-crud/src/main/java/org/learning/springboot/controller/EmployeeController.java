@@ -55,7 +55,7 @@ public class EmployeeController {
 	@GetMapping("/page/{pageNo}")
 	public String findPaginated(@PathVariable(value = "pageNo") int pageNo, @RequestParam("sortField") String sortField,
 			@RequestParam("sortDir") String sortDir, Model model) {
-		int pageSize = 5;
+		int pageSize = 3;
 
 		Page<Employee> page = employeeService.findPaginated(pageNo, pageSize, sortField, sortDir);
 		List<Employee> listEmployees = page.getContent();
