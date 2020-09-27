@@ -2,6 +2,8 @@ package org.learning.springboot.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.learning.springboot.entity.User;
 import org.learning.springboot.exception.ResourceNotFoundException;
 import org.learning.springboot.repository.UserRepository;
@@ -35,12 +37,12 @@ public class UserController {
 	}
 
 	@PostMapping
-	public User createUser(@RequestBody User user) {
+	public User createUser(@Valid @RequestBody User user) {
 		return userRepository.save(user);
 	}
 
 	@PutMapping("/{id}")
-	public User updateUser(@RequestBody User user, @PathVariable(value = "id") long userId) {
+	public User updateUser(@Valid @RequestBody User user, @PathVariable(value = "id") long userId) {
 		User existingUser = userRepository.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User not found with ID :: " + userId));
 
