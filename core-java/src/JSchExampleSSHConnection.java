@@ -6,7 +6,6 @@ import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
-
 public class JSchExampleSSHConnection {
 
 	/**
