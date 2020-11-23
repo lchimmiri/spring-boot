@@ -9,5 +9,4 @@ public class SpringbootSecurityH2LoginApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootSecurityH2LoginApplication.class, args);
 	}
-
 }
